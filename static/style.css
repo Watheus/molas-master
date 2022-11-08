@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+* {margin:0;padding:0;box-sizing:border-box;text-decoration: none}
+*:focus {outline: none}
+
+html, body {
+    height: 100%;
+    min-height: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    scroll-behavior: smooth;
+}
+
+#home {
+    background: linear-gradient(#00000059, #00000059), #505050 url(img/bg-molas.jpg) 50% 0/cover no-repeat fixed;
+    height: 100%;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar {
+    height: 120px;
+    width: 100%;
+    padding: 0 110px;
+    transition: 0.4s;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+}
+.navbar.fixed {
+    height: 80px;
+    background: #f5f5f5;
+    box-shadow: 0 0 7px #888;
+}
+.logo {
+    float: left;
+    height: 120px;
+    background: url(img/logo_branco.png) center/120px no-repeat;
+    width: 160px;
+    transition: 0.4s;
+}
+.logo.fixed {
+    background: url(img/logo.png) center/80px no-repeat;
+    height: 80px;
+}
+.navbar ul {
+    list-style-type: none;
+    margin: 0 10px;
+}
+.navbar li {
+    float: left;
+    padding: 0 17px;
+}
+.navbar li a {
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    padding: 8px;
+    position: relative;
+    font-weight: 500;
+}
+.navbar.fixed li a {
+    color: #082c5e;
+}
+.navbar li a::after {
+    content: '';
+    position: absolute;
+    background: #fff;
+    display: block;
+    height: 2px;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    transition: 0.3s ease;
+}
+.navbar.fixed li a::after {
+    background: #082c5e;
+}
+.navbar li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+.nav-mobile {
+    display: none;
+}
+
+#titulo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-transform: uppercase;
+    height: 100%;
+}
+
+#titulo .momas {
+    font-weight: 700;
+    background: -webkit-linear-gradient(top, #014aae 35%, #082c5e 100%);
+    background: linear-gradient(to bottom, #014aae 35%, #082c5e 100%);
+    background-clip: text;
+    filter: drop-shadow(1px 1px 2px #000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 30px;
+}
+
+#titulo .desc {
+    background: -webkit-linear-gradient(top, #fff 35%, #8a8a8a 100%);
+    background: linear-gradient(to bottom, #fff 35%, #8a8a8a 100%);
+    background-clip: text;
+    filter: drop-shadow(0 0 20px #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+#titulo h1 {
+    font-size: 80px;
+}
+#titulo p {
+    font-size: 27px;
+}
+
+.arrow {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 35px;
+    opacity: 0;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #fff;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.arrow-first {
+    animation: arrowdown 2s ease-in-out infinite;
+}
+.arrow-second {
+    animation: arrowdown 2s ease-in-out 1s infinite;
+}
+.arrow::after {
+    content: "\f078";
+}
+
+@keyframes arrowdown {
+    0% {
+        transform: translate(0, -12px);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(0, 12px);
+        opacity: 0;
+    }
+}
+
+#portfolio, #quem-somos, #contato {
+    padding: 70px 160px;
+    scroll-margin-top: 80px;
+}
+
+#portfolio {
+    background: linear-gradient(#ffffff73, #ffffff73), url(img/bg_claro.jpg) no-repeat center center;
+}
+
+#quem-somos {
+    background-color: #041f46;
+    color: #fff;
+}
+
+#contato {
+    background: linear-gradient(#f1f1f1, #f1f1f1e6), url(img/molas_bg.png) no-repeat center center;
+    background-size: cover;
+}
+
+#portfolio, #contato h1 {text-align: center}
+
+.book-catalogo {
+    display: flex;
+    justify-content: center;
+}
+
+.img-catalogo {
+    background-image: url(img/catalogo.png);
+    background-position: center;
+    background-size: cover;
+    width: 450px;
+    height: 636px;
+    border-radius: 30px;
+    margin: 16px;
+}
+
+.img-catalogo a {
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(3px);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: white;
+    border-radius: 30px;
+}
+
+.img-catalogo p {
+    font-size: 30px;
+    width: 300px;
+    text-align: center;
+    text-shadow: 0 0 15px #000, 0 0 15px #000;
+}
+
+#quem-somos .column.side {
+    margin: 20px 0;
+    text-align: justify;
+    display: flex;
+    align-items: center;
+}
+#quem-somos h1{
+    margin: 15px 0 5px;
+}
+#quem-somos .txt {
+    margin: 0 30px;
+}
+
+#quem-somos .column.whole {
+    column-span: all;
+    margin: 42px 0 20px;
+}
+
+#quem-somos img {
+    width: 500px;
+    height: auto;
+    margin: auto;
+    display: block;
+}
+
+h1 {
+    font-size: 40px;
+    margin: 25px 0 10px;
+}
+h2 {
+    margin: 15px 0 5px;
+}
+h3 {
+    margin-bottom: 4px;
+}
+
+#contato .column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    width: 900px;
+    margin: auto;
+    backdrop-filter: blur(6px);
+    box-shadow: 6px 6px 10px darkgrey;
+    border-radius: 20px;
+}
+
+form {width: 450px;margin: 20px 50px 0}
+
+.contato-telefone {
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.contato-telefone div {
+    margin-bottom: 20px;
+}
+.telefone {float: left}
+.endereco {float: left}
+
+.nome {display: flex}
+
+#contato p.submit {
+    margin: 18px 0 13px;
+    text-align: center;
+}
+
+#formulario-contato p.left, p.right {width: 100%}
+#formulario-contato p.left {padding-right: 6px}
+#formulario-contato p.right {padding-left: 6px}
+
+input, select, textarea {
+    background: #e1e1e1;
+    box-sizing: border-box;
+    padding: 8px 10px;
+    min-height: 38px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+input[type=submit] {
+    width: 30%;
+    cursor: pointer;
+    background: #062f69;
+    box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.308);
+    transition-timing-function: ease;
+    transition: all .6s;
+    text-transform: capitalize;
+    color: #fff;
+}
+
+input[type=submit]:hover {
+    background: #0f55b8;
+    box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.308);
+}
+
+textarea {
+    resize: none;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+.footer {
+    background-color: #041f46;
+    padding: 30px;
+    font-size: 11px;
+    text-align: center;
+    clear: both;
+    color: #fff;
+}
